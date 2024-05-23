@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const PORT = 3000;
+// const cookieParser = require("cookie-parser");
 
 app.use(logger)
 
@@ -20,6 +21,20 @@ app.post("/post", (req, res) => {
   res.send("Checking POST request for user!");
 });
 // In Postman -----> Checking POST request for user!
+
+// app.use(logger('dev'))
+// app.use(express.json)
+// app.use(express.urlencoded({ extended: false}))
+// app.use(cookieParser())
+// app.use(express.static(path.join(__dirname, 'public')))
+
+// app.use('/', index)
+
+// app.use((req, res, next) => {
+// const err = new Error('Not Found')
+// err.status = 404
+// next(err)
+// })
 
 // Middleware *************************************************************************************************
 
@@ -42,30 +57,9 @@ function logger(req, res, next) {
 
 
 
-
-
-
 app.listen(PORT, () => {
 console.log(`Server is running on port: ${PORT}`)
 })
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-// app.get("/users", (req, res) => {
-// res.send("User List")
-// });
-
-// app.get("/users/new", (req, res) => {
-// res.send("User New Form")
-// });
